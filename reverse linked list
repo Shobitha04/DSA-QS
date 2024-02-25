@@ -1,0 +1,68 @@
+/****************************************************************
+
+ Following is the class structure of the Node class:
+
+ class Node {
+     public int data;
+     public Node next;
+
+     Node()
+     {
+         this.data = 0;
+         this.next = null;
+     }
+     Node(int data)
+     {
+         this.data = data;
+         this.next = null;
+     }
+     Node(int data, Node next)
+     {
+         this.data = data;
+         this.next = next;
+     }
+ }
+
+ *****************************************************************/
+
+    public class Solution
+{
+    public static node ReverseList(Node head)
+  {
+    (if head==null || head.next==null){
+      return head;
+      }
+//pointer to prev node of current node
+     Node prev = null;
+//pointer to next node
+     Node nextnode = null;
+
+     Node curr = head;
+
+     while(curr!=null)
+       {
+        // Pointer to the next node of the current node
+       nextnode = curr.next;
+        // Inverting the links of linked list
+       curr.next = prev;
+       // Forwarding prev to its next node
+       prev = curr;
+        // Forwarding curr to its next node
+       curr = nextnode;
+       }
+     return prev;
+     }
+     }
+     
+     
+
+
+
+
+
+
+
+
+
+     
+     
